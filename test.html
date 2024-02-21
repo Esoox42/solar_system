@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .container {
+            font-size: 10px;
+            width: 40em;
+            height: 40em;
+            position: relative;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10em;
+            height: 10em;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 3em white;
+        }
+
+        .mercury,
+        .venus,
+        .earth,
+        .moon {
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+            animation: orbit 36s linear infinite; /* Adjusted animation duration */
+        }
+
+        .mercury {
+            top: 5em; /* Adjusted position */
+            left: 5em; /* Adjusted position */
+            width: 5em; /* Adjusted size */
+            height: 5em; /* Adjusted size */
+            animation-duration: 10s; /* Adjusted animation duration */
+        }
+
+        .venus {
+            top: 10em; /* Adjusted position */
+            left: 10em; /* Adjusted position */
+            width: 8em; /* Adjusted size */
+            height: 8em; /* Adjusted size */
+            animation-duration: 15s; /* Adjusted animation duration */
+        }
+
+        .earth {
+            top: 15em; /* Adjusted position */
+            left: 15em; /* Adjusted position */
+            width: 10em; /* Adjusted size */
+            height: 10em; /* Adjusted size */
+        }
+
+        .moon {
+            top: 1em; /* Adjusted position */
+            left: 1em; /* Adjusted position */
+            width: 2em; /* Adjusted size */
+            height: 2em; /* Adjusted size */
+            animation-duration: 2s; /* Adjusted animation duration */
+        }
+
+        .mercury::before,
+        .venus::before,
+        .earth::before,
+        .moon::before {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .mercury::before {
+            top: 2em; /* Adjusted position */
+            right: -1em; /* Adjusted position */
+            width: 1em; /* Adjusted size */
+            height: 1em; /* Adjusted size */
+            background-color: brown;
+        }
+
+        .venus::before {
+            top: 2.5em; /* Adjusted position */
+            right: -1.5em; /* Adjusted position */
+            width: 1.5em; /* Adjusted size */
+            height: 1.5em; /* Adjusted size */
+            background-color: orange;
+        }
+
+        .earth::before {
+            top: 3em; /* Adjusted position */
+            right: -1.5em; /* Adjusted position */
+            width: 2em; /* Adjusted size */
+            height: 2em; /* Adjusted size */
+            background-color: aqua;
+        }
+
+        .moon::before {
+            top: 0.5em; /* Adjusted position */
+            right: -0.2em; /* Adjusted position */
+            width: 0.8em; /* Adjusted size */
+            height: 0.8em; /* Adjusted size */
+            background-color: silver;
+        }
+
+        @keyframes orbit {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="mercury"></div>
+        <div class="venus"></div>
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
+</body>
+
+</html>
