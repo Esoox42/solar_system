@@ -32,6 +32,7 @@
         }
 
         .mercury,
+        .venus,
         .earth,
         .moon {
             position: absolute;
@@ -47,6 +48,14 @@
             width: 20em;
             height: 20em;
             animation: orbit 20s linear infinite; 
+        }
+
+        .venus {
+            top: 8em;
+            left: 8em;
+            width: 35em;
+            height: 35em;
+            animation: orbit 30s linear infinite;
         }
 
         .earth {
@@ -67,6 +76,7 @@
 
         .mercury::before,
         .earth::before,
+        .venue::before,
         .moon::before {
             content: '';
             position: absolute;
@@ -78,7 +88,15 @@
             right: 1.8em;
             width: 2em;
             height: 2em;
-            background-color: orange;
+            background-color: rgb(128, 47, 0);
+        }
+
+        .venus::before {
+            top: 1.2em;
+            right: 1.2em;
+            width: 2.5em;
+            height: 2.5em;
+            background-color: rgb(255, 119, 0);
         }
 
         .earth::before {
