@@ -31,6 +31,7 @@
             box-shadow: 0 0 3em white;
         }
 
+        .mercury,
         .earth,
         .moon {
             position: absolute;
@@ -38,6 +39,14 @@
             border-color: white transparent transparent transparent;
             border-width: 0.1em 0.1em 0 0;
             border-radius: 50%;
+        }
+
+        .mercury {
+            top: 12em; 
+            left: 12em; 
+            width: 20em;
+            height: 20em;
+            animation: orbit 20s linear infinite; 
         }
 
         .earth {
@@ -56,11 +65,20 @@
             animation: orbit 2.7s linear infinite;
         }
 
+        .mercury::before,
         .earth::before,
         .moon::before {
             content: '';
             position: absolute;
             border-radius: 50%;
+        }
+
+        .mercury::before {
+            top: 1.8em;
+            right: 1.8em;
+            width: 2em;
+            height: 2em;
+            background-color: orange;
         }
 
         .earth::before {
@@ -90,8 +108,15 @@
 <body>
     <div class="container">
         <div class="sun"></div>
-        <div class="earth">
-            <div class="moon"></div>
+            <div class="mercury"></div>
+            <div class="venus"></div>
+            <div class="earth">
+                <div class="moon"></div>
+            <div class="mars"></div>
+            <div class="jupiter"></div>
+            <div class="saturn"></div>
+            <div class="uranus"></div>
+            <div class="neptune"></div>
         </div>
     </div>
 </body>
