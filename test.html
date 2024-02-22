@@ -22,8 +22,9 @@
 
         .sun {
             position: absolute;
-            top: 15em;
-            left: 15em;
+            top: 50%; /* Center the sun vertically */
+            left: 50%; /* Center the sun horizontally */
+            transform: translate(-50%, -50%); /* Adjust to center sun properly */
             width: 10em;
             height: 10em;
             background-color: yellow;
@@ -43,11 +44,11 @@
         }
 
         .mercury {
-            top: 5em; 
-            left: 5em; 
-            width: 5em;
-            height: 5em;
-            animation: orbit 20s linear infinite; 
+            top: 50%; /* Adjust positioning to orbit around the sun */
+            left: calc(50% - 15em); /* Adjust distance from the sun */
+            width: 2em; /* Adjust size as needed */
+            height: 2em; /* Adjust size as needed */
+            animation: orbit 20s linear infinite;
         }
 
         .venus {
@@ -59,18 +60,18 @@
         }
 
         .earth {
-            top: 15em;
-            left: 15em;
-            width: 10em;
-            height: 10em;
+            top: 50%; /* Adjust positioning to orbit around the sun */
+            left: calc(50% - 20em); /* Adjust distance from the sun */
+            width: 3em; /* Adjust size as needed */
+            height: 3em; /* Adjust size as needed */
             animation: orbit 36.5s linear infinite;
         }
 
         .moon {
-            top: 1em;
-            right: 1em;
-            width: 2em;
-            height: 2em;
+            top: 50%; /* Adjust positioning to orbit around the earth */
+            left: calc(50% + 15em); /* Adjust distance from the earth */
+            width: 1em; /* Adjust size as needed */
+            height: 1em; /* Adjust size as needed */
             animation: orbit 2.7s linear infinite;
         }
 
@@ -116,7 +117,12 @@
         }
 
         @keyframes orbit {
+            from {
+                transform-origin: 50% 50%; /* Ensure rotation is around the sun */
+                transform: rotate(0deg);
+            }
             to {
+                transform-origin: 50% 50%; /* Ensure rotation is around the sun */
                 transform: rotate(360deg);
             }
         }
